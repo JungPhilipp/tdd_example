@@ -1,11 +1,11 @@
 #include <calculator.h>
 
 
-int Calculator::add(const std::string& numbers){
+int Calculator::add(const std::string& numbers, const std::string& delimiters){
   auto result = 0;
   auto number = std::string{};
   for(const auto& letter : numbers){
-      if(letter ==',' && number.size()>0){
+      if(delimiters.find(letter)!= std::string::npos && number.size()>0){
           result+= std::stoi(number);
           number.clear();
         }

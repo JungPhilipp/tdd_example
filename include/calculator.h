@@ -3,5 +3,5 @@
 
 class Calculator{
 public:
-  int add(const std::string& numbers);
+  int add(const std::string& numbers,const std::string& delimiters = ",\n");
 };
