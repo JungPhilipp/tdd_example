@@ -8,12 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
-
-
-TEST_CASE("SimpleOutput"){
-    std::cout <<"Test output working" << std::endl;
-}
-
+#include <functional>
 
 
 TEST_CASE("CalculatorMainTest"){
@@ -25,11 +20,16 @@ TEST_CASE("CalculatorMainTest"){
     SECTION("add int"){
         using value_type = int;
         auto count = 10;
-        auto numbers = std::vector<value_type>{};
+        auto ns = std::vector<value_type>{};
         for(auto i = 0; i < count; ++i){
-            numbers.push_back(dis(gen));
+            ns.push_back(dis(gen));
         }
-
+        auto expected = 0;
+        REQUIRE(calc.add("")==expected);
+        expected = ns[0];
+        REQUIRE(calc.add(generate_string(ns[0]))==expected);
+        expected = std::accumulate(begin(ns), begin(ns)+2,0);
+        REQUIRE(calc.add(generate_string(ns[0],ns[1]))==expected );
 
     }
 }
