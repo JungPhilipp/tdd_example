@@ -1,8 +1,7 @@
 set(TEST_HEADERS
-    generate.h
     )
 set(TEST_SRC
-    calculator_ut.cpp
+    problem0_ut.cpp
     main.cpp
     )
 

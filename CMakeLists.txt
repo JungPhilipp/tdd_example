@@ -9,3 +9,4 @@ add_subdirectory(third_party)
 
 
 add_subdirectory(problem0)
+add_subdirectory(helper)
