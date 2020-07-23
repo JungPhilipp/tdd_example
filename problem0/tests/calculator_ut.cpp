@@ -1,3 +1,4 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include <calculator.h>
 
@@ -23,7 +24,7 @@ TEST_CASE("CalculatorMainTest"){
         ns.push_back(dis(gen));
     }
 
-    SECTION("add two or less numbers"){
+    SUBCASE("add two or less numbers"){
         auto expected = 0;
         REQUIRE(calc.add("")==expected);
         expected = ns[0];
@@ -36,7 +37,7 @@ TEST_CASE("CalculatorMainTest"){
         CHECK_THROWS(calc.add(generate_string(ns[0],"x")));
     }
 
-    SECTION("add arbitrary number of number"){
+      SUBCASE("add arbitrary number of number"){
       auto num_tests = 10;
       for(auto delimiter : {",","\n"}){
         for(auto i = 0; i < num_tests; ++i){

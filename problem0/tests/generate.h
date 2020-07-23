@@ -6,7 +6,7 @@ struct Generate_string{
 private:
   std::string delimiter;
 public:
-  Generate_string(std::string delimiter_): delimiter(delimiter_){}
+  explicit Generate_string(std::string delimiter_): delimiter(std::move(delimiter_)){}
 
   template
   <class T,
