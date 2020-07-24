@@ -1,20 +1,17 @@
 #include <problem0.h>
+#include <print.h>
 
+void problem0::reverse(char *str) {
+  // use std:: swap
+  auto index = 0;// limited length (consider using long/size_t)
+  while(str[index] != '\0'){
+    index++;
+  }
+  auto lhs = 0;
+  auto rhs = index - 1;
 
-int Calculator::add(const std::string& numbers, const std::string& delimiters){
-  auto result = 0;
-  auto number = std::string{};
-  for(const auto& letter : numbers){
-      if(delimiters.find(letter)!= std::string::npos && number.size()>0){
-          result+= std::stoi(number);
-          number.clear();
-        }
-      else{
-          number+=letter;
-        }
-    }
-  if(number.size()>0){
-      result+= std::stoi(number);
-    }
-  return result;
+  using std::swap;
+  while(lhs < rhs) {
+    swap(str[lhs++], str[rhs--]);
+  }
 }

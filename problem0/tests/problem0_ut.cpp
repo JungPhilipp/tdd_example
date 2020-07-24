@@ -1,12 +1,12 @@
 #include "doctest.h"
 #include <problem0.h>
 
-#include <iostream>
-#include <vector>
-#include <random>
-#include <functional>
+using namespace problem0;
 
-
-TEST_CASE("CalculatorMainTest"){
-  CHECK(true);
+TEST_CASE("Reverse String"){
+  SUBCASE("Reverse non-empty string"){
+    char str[] = "test test";
+    problem0::reverse(str);
+    CHECK(std::string("tset tset") == str);
+  }
 }

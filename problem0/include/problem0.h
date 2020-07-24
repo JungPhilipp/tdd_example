@@ -1,7 +1,9 @@
 #pragma once
+
 #include <string>
 
-class Calculator{
-public:
-  int add(const std::string& numbers,const std::string& delimiters = ",\n");
-};
+#pragma once
+
+namespace problem0 {
+  void reverse(char * str);
+}
