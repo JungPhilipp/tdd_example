@@ -5,5 +5,5 @@
 #pragma once
 
 namespace problem0 {
-  void reverse(char * str);
+  auto reverse(char * str) noexcept -> void;
 }

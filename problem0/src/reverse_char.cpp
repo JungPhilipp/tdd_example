@@ -1,7 +1,7 @@
 #include <reverse_char.h>
 #include <print.h>
 
-void problem0::reverse(char *str) {
+auto problem0::reverse(char *str) noexcept -> void {
   if (not str)
     return;
   auto index = 0;// limited length (consider using long/size_t)

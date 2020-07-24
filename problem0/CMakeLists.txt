@@ -1,5 +1,6 @@
 set(HEADERS
     include/reverse_char.h
+    include/smart_ptr.h
     )
 set(SRC
     src/reverse_char.cpp

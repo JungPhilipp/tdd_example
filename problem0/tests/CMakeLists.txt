@@ -2,6 +2,7 @@ set(TEST_HEADERS
     )
 set(TEST_SRC
     reverse_char_ut.cpp
+    smart_ptr_ut.cpp
     main.cpp
     )
 
