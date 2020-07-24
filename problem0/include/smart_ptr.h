@@ -24,6 +24,7 @@ namespace problem0 {
       this->ref_count = rhs.ref_count;
       this->value = rhs.value;
       (*ref_count)++;
+      return *this;
     }
 
     auto operator*() -> T { return *value; }
