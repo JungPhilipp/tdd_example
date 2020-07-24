@@ -12,7 +12,18 @@ namespace problem0 {
     // Call by value and move into storage
     explicit smart_ptr(T* value) : ref_count(new int(1)), value(value) {}
     smart_ptr(smart_ptr<T> &rhs): value(rhs.value), ref_count(rhs.ref_count){
-      (*rhs.ref_count)++;
+      (*ref_count)++;
+    }
+
+    auto operator=(smart_ptr<T> const& rhs) -> smart_ptr<T>& {
+      (*ref_count)--;
+      if(*ref_count == 0){
+        delete ref_count;
+        delete value;
+      }
+      this->ref_count = rhs.ref_count;
+      this->value = rhs.value;
+      (*ref_count)++;
     }
 
     auto operator*() -> T { return *value; }
