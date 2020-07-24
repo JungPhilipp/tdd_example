@@ -11,10 +11,8 @@ namespace problem0 {
     // Compromise to avoid impl. a make_smart_ptr function
     // Call by value and move into storage
     explicit smart_ptr(T* value) : ref_count(new int(1)), value(value) {}
-    smart_ptr(smart_ptr<T> &rhs){
-      this->value = rhs.value;
-      this->ref_count = rhs.ref_count;
-      *rhs.ref_count += 1;
+    smart_ptr(smart_ptr<T> &rhs): value(rhs.value), ref_count(rhs.ref_count){
+      (*rhs.ref_count)++;
     }
 
     auto operator*() -> T { return *value; }
