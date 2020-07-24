@@ -1,7 +1,7 @@
 set(TEST_HEADERS
     )
 set(TEST_SRC
-    problem0_ut.cpp
+    reverse_char_ut.cpp
     main.cpp
     )
 

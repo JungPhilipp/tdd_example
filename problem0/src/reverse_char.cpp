@@ -1,4 +1,4 @@
-#include <problem0.h>
+#include <reverse_char.h>
 #include <print.h>
 
 void problem0::reverse(char *str) {
