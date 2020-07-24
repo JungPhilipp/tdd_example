@@ -10,18 +10,28 @@ namespace problem0 {
   public:
     // Compromise to avoid impl. a make_smart_ptr function
     // Call by value and move into storage
-    explicit smart_ptr(T* value) : value(value) {}
+    explicit smart_ptr(T* value) : ref_count(new int(1)), value(value) {}
+    smart_ptr(smart_ptr<T> &rhs){
+      this->value = rhs.value;
+      this->ref_count = rhs.ref_count;
+      *rhs.ref_count += 1;
+    }
 
     auto operator*() -> T { return *value; }
 
     auto operator->() -> T * { return value; }
 
+
+
     ~smart_ptr(){
-      print("delete");
-      delete value;
+      if(--(*ref_count) == 0) {
+        delete value;
+        delete ref_count;
+      }
     }
 
   private:
+    int* ref_count;
     T* value;
   };
 

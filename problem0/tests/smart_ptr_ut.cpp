@@ -15,7 +15,8 @@ TEST_CASE ("Smart Ptr") {
   }
   SUBCASE("Smart Ptr can be assigned"){
     auto value = 10;
-    auto ptr1 = smart_ptr(new S{value});
+    auto v = new S{value};
+    auto ptr1 = smart_ptr(v);
     auto ptr2 = ptr1;
     ptr2->x = 20;
     CHECK_EQ(ptr2->x, ptr1->x);
