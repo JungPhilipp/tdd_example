@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include "print.h"
 
 namespace problem0 {
 
@@ -16,6 +17,7 @@ namespace problem0 {
     auto operator->() -> T * { return value; }
 
     ~smart_ptr(){
+      print("delete");
       delete value;
     }
 
