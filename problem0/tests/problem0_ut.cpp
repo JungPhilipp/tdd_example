@@ -29,4 +29,9 @@ TEST_CASE("Reverse String"){
     problem0::reverse(str);
         CHECK(std::string("") == str);
   }
+  SUBCASE("Reverse null string"){
+    char * str = nullptr;
+    problem0::reverse(str);
+        CHECK_EQ(str, nullptr);
+  }
 }
