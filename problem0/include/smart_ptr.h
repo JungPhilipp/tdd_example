@@ -22,9 +22,12 @@ public:
     (*ref_count)++;
   }
 
+  auto operator==(smart_ptr<T> const& rhs) const -> bool {
+    return value == rhs.value;
+  }
   auto operator=(smart_ptr<T> const& rhs) -> smart_ptr<T>&
   {
-    if (this == rhs)
+    if (*this == rhs)
       return *this;
     
     (*ref_count)--;
