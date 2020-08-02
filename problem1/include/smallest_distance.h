@@ -7,14 +7,13 @@ namespace problem1 {
 /**
  * Copy input range to allow for sorting without modifying original data
  */
-template<class T, std::size_t S0, std::size_t S1>
+template<class T, class U>
 [[nodiscard]] consteval auto
-smallest_distance(std::array<T, S0> lhs, std::array<T, S1> rhs) noexcept
-  -> std::optional<std::pair<T, T>>
+smallest_distance(T lhs, U rhs) noexcept
+  -> std::optional<std::pair<typename T::value_type, typename U::value_type>>
 {
   if (size(lhs) == 0 || size(rhs) == 0)
     return {};
-
   std::ranges::sort(lhs);
   std::ranges::sort(rhs);
 
@@ -28,7 +27,7 @@ smallest_distance(std::array<T, S0> lhs, std::array<T, S1> rhs) noexcept
       distance = std::make_pair(*a, *b);
     *a < *b ? a++ : b++;
   }
-  return {distance};
+  return { distance };
 }
 
 }
