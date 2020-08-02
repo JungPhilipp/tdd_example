@@ -1,8 +1,8 @@
 set(HEADERS
-    include/reverse_char.h
+  include/reverse_char.h
   )
 set(SRC
-    src/reverse_char.cpp
+  src/reverse_char.cpp
     )
 
 

@@ -17,6 +17,7 @@ add_subdirectory(third_party)
 
 
 add_subdirectory(problem0)
+add_subdirectory(problem1)
 add_subdirectory(helper)
 add_subdirectory(plain)
 add_subdirectory(shared_ptr)
