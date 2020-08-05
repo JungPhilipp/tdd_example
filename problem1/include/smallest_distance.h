@@ -8,6 +8,7 @@ namespace problem1 {
  * Copy input range to allow for sorting without modifying original data
  */
 template<class T, class U>
+requires requires {typename T::value_type;}
 [[nodiscard]] consteval auto
 smallest_distance(T lhs, U rhs) noexcept
   -> std::optional<std::pair<typename T::value_type, typename U::value_type>>
