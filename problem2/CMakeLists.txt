@@ -1,8 +1,8 @@
 set(HEADERS
-    include/plain.h
+    include/max_number.h
     )
 set(SRC
-    src/plain.cpp
+    src/max_number.cpp
     )
 
 
